@@ -8,32 +8,43 @@
 #include "integer.h"
 
 using namespace std;
-void MetodoFSArrayList(FSArrayList, int, int);
-void MetodoLinkedList(LinkedList, int, int);
-void MetodoDLCursorList(DLCursorList, int, int);
+/*void MetodoFSArrayList(FSArrayList*, int, int);
+void MetodoLinkedList(LinkedList*, int, int);
+void MetodoDLCursorList(DLCursorList*, int, int);
+*/
+void listaTDA(TDAList*);
 
 int main(int argc, char *argv[]){
 	cout << "**********MENU**********" << endl << " 1. FSArrayList" << endl << " 2. LinkedList" << endl << " 3. DlCursorList";
 	cout << endl << " 4. CursorList" << endl << " 5. VSArrayList"<< endl << " Ingrese su opcion: ";
-	int opcion, number = rand()%100,position = 0+(rand()%(int)(list->size()-0+1));
+	int opcion;
 	cin >> opcion;
 	TDAList* list;
 	Object* data = NULL;
 	if (opcion == 1){
-		list = new FSArrayList(5000);
-	 	MetodoFSArrayList(list, number, position);
+		//list = new FSArrayList(5000);
+	 	//MetodoFSArrayList(list, number, position);
+	 	list = new FArrayList(5000);
 	 } else if (opcion == 2){
-	 	list = new LinkedList(5000);
-	 	MetodoLinkedList(list, number, position);
+	 	//list = new LinkedList(5000);
+	 	//MetodoLinkedList(list, number, position);
 	 } else if (opcion == 3){
-	 	list = new DLCursorList(5000);
-	 	MetodoDLCursorList(list, number, position);
+	 	//list = new DLCursorList(5000);
+	 	//MetodoDLCursorList(list, number, position);
 	 }
 	delete list;
     return 0;
 }
+void listaTDA(TDAList* list){
+	//insertar los 5000 mil numeros
+	for (int i = 0; i < 5000; ++i)
+	{
+		/* code */
+		list->insert(new Integer(i*10),i);
+	}
+}
 /***************************************************/
-void MetodoFSArrayList(FSArrayList lista, int numero, int posicion){
+/*void MetodoFSArrayList(FSArrayList* lista, int numero, int posicion){
 	for (int i = 0; i < 5000; ++i){
 		lista->insert(new Integer(numero),posicion);
 	}
@@ -49,7 +60,7 @@ void MetodoFSArrayList(FSArrayList lista, int numero, int posicion){
 	cout << endl;
 }
 /***************************************************/
-void MetodoLinkedList(LinkedList lista, int numero, int posicion){
+/*void MetodoLinkedList(LinkedList* lista, int numero, int posicion){
 	for (int i = 0; i < 5000; ++i){
 		lista->insert(new Integer(numero),posicion);
 	}
@@ -63,9 +74,9 @@ void MetodoLinkedList(LinkedList lista, int numero, int posicion){
 		cout << " " << end;
 	}
 	cout << endl;
-}
+}*/
 /***************************************************/
-void MetodoDLCursorList(DLCursorList lista, int numero, int posicion){
+/*void MetodoDLCursorList(DLCursorList* lista, int numero, int posicion){
 	for (int i = 0; i < 5000; ++i){
 		lista->insert(new Integer(numero),posicion);
 	}
@@ -79,5 +90,5 @@ void MetodoDLCursorList(DLCursorList lista, int numero, int posicion){
 		cout << " " << end;
 	}
 	cout << endl;
-}	
+}*/	
 /***************************************************/
