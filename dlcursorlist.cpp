@@ -25,7 +25,7 @@ bool DLCursorList::insert(Object* o, int i){
 		return false;
 	if(ssize == capacity)
 		return false;
-	int neo = findNextSlot();
+	int neo = findNext();
 	if(neo == -1){
 		return false;
 	}else{
@@ -171,7 +171,7 @@ bool DLCursorList::isFull() const{
 	return (ssize == capacity);
 }
 /***************************************************/
-int DLCursorList::findNextSlot() const{
+int DLCursorList::findNext() const{
 	int ret = -1;
 	for(int i = 0; i < capacity; i++){
 		if(!map[i].datum){
