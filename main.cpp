@@ -25,6 +25,7 @@ int main(int argc, char *argv[]){
 		//list = new FSArrayList(5000);
 	 	//MetodoFSArrayList(list, number, position);
 	 	list = new FArrayList(5000);
+	 	listaTDA(list);
 	 } else if (opcion == 2){
 	 	//list = new LinkedList(5000);
 	 	//MetodoLinkedList(list, number, position);
@@ -41,6 +42,13 @@ void listaTDA(TDAList* list){
 	{
 		/* code */
 		list->insert(new Integer(i*10),i);
+	}
+
+	//imprimir
+	for (int i = 0; i < list->size(); ++i)
+	{
+		/* code */
+		cout << list->get(i)->toString() << endl;
 	}
 }
 /***************************************************/
