@@ -8,11 +8,10 @@ class DLCursorList : public TDAList{
 		int prev, next;
 		Object* datum;
 	};
-
 	Registry* map;
 	int head;
 	int capacity;
-	int findNextSlot() const;
+	int findNext() const;
 
 public:
 	DLCursorList(int=25);
