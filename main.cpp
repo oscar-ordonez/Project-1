@@ -50,6 +50,27 @@ void listaTDA(TDAList* list){
 		/* code */
 		cout << list->get(i)->toString() << endl;
 	}
+
+	//first
+	cout << "First = " << list->first() << endl;
+
+	//Last
+	cout << "Last = " << list->last() << endl;
+	
+	//get
+	for (int i = 0; i < list->size(); ++i)
+	{
+		/* code */
+		list->get(i);
+	}
+	//remover
+	Object* tmp = NULL;
+	for (int i = 0; i < list->size(); ++i)
+	{
+		/* code */
+		tmp  = list->remove(0);
+		delete tmp;
+	}
 }
 /***************************************************/
 /*void MetodoFSArrayList(FSArrayList* lista, int numero, int posicion){
