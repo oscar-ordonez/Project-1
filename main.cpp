@@ -21,14 +21,14 @@ int main(int argc, char *argv[]){
 	TDAList* list;
 	Object* data = NULL;
 	if (opcion == 1){
-	 	list = new FArrayList(5000);
+	 	list = new FArrayList(1000);
 	 	listaTDA(list);
 	 } else if (opcion == 2){
 	 	list = new LinkedList();
 	 	listaTDA(list);
 	 	//MetodoLinkedList(list, number, position);
 	 } else if (opcion == 3){
-	 	list = new DLCursorList(5000);
+	 	list = new DLCursorList(1000);
 	 	listaTDA(list);
 	 	//MetodoDLCursorList(list, number, position);
 	 }
@@ -40,36 +40,37 @@ int main(int argc, char *argv[]){
 void listaTDA(TDAList* list){
 	clock_t start;
 	clock_t end;
-	//insertar los 5000 mil numeros
+	//insertar los 1000 mil numeros
 	cout << "AQUI SE IMPRIMI INSERT"<< endl;
-	for (int i = 0; i < 5000; ++i)
+	for (int i = 0; i < 1000; ++i)
 	{
 		start = clock();
 		list->insert(new Integer(i*10),i);
 		end = clock()-start/CLOCKS_PER_SEC;
-		cout << end << endl;
+		cout << end << " ";
 	}
+	cout<<endl;
 
 	//first
 	cout << "AQUI SE IMPRIMI FIRST"<< endl;
-	for (int i = 0; i < 5000; ++i)
+	for (int i = 0; i < 1000; ++i)
 	{
 		start = clock();
 		list->first();
 		end = clock()-start/CLOCKS_PER_SEC;
-		cout << end << endl;
+		cout << end << " ";
 	}
-
+	cout<<endl;
 	//Last
 	cout << "AQUI SE IMPRIMI LAST"<< endl;
-	for (int i = 0; i < 5000; ++i)
+	for (int i = 0; i < 1000; ++i)
 	{
 		start = clock();
 		list->last();
 		end = clock()-start/CLOCKS_PER_SEC;
-		cout << end << endl;
+		cout << end << " ";
 	}
-	
+	cout<<endl;
 	//get
 	cout << "AQUI SE IMPRIMI GET"<< endl;
 	for (int i = 0; i < list->size(); ++i)
@@ -77,8 +78,21 @@ void listaTDA(TDAList* list){
 		start = clock();
 		list->get(i);
 		end = clock()-start/CLOCKS_PER_SEC;
-		cout << end << endl;
+		cout << end << " ";
 	}
+	cout<<endl;
+
+	//indexOf
+	cout << "AQUI SE IMPRIME INDEXOF"<< endl;
+	for (int i = 0; i < list->size(); ++i)
+	{
+		/* code */
+		start = clock();
+		list->indexOf(new Integer(i));
+		end = clock()-start/CLOCKS_PER_SEC;
+		cout << end << " ";
+	}
+	cout << endl;
 	//remover
 	cout << "AQUI SE IMPRIMI REMOVE"<< endl;
 	Object* tmp = NULL;
@@ -87,8 +101,9 @@ void listaTDA(TDAList* list){
 		start = clock();
 		tmp  = list->remove(0);
 		end = clock()-start/CLOCKS_PER_SEC;
-		cout << end << endl;
+		cout << end << " ";
 		delete tmp;
 	}
+	cout<<endl;
 }
 /***************************************************/
